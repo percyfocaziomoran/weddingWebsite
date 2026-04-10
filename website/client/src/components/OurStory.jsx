@@ -5,13 +5,13 @@ import styles from "./OurStory.module.css";
 function OurStory() {
   return (
     <section className={styles.OurStory}>
+      <img src="/polaroid1.PNG" className={styles.polaroid} alt="" />
       <h1 className={styles.headStory}>Our Story</h1>
       <img src="/sticker3.PNG" className={styles.sticker3} alt="" />
       <p className={styles.meeting}>
         Elliott and Percy matched on Hinge on February 22nd, 2024...........
       </p>
       <img src="/sticker1.PNG" className={styles.sticker1} alt="" />
-      <img src="/polaroid1.PNG" className={styles.polaroid} alt="" />
       <p className={styles.lorem}>
         Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit
         amet, consectetur, adipisci velit..." "There is no one who loves pain

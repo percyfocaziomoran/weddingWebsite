@@ -4,6 +4,21 @@ import { useState } from "react";
 import styles from "./RSVPForm.module.css";
 
 function RSVPForm() {
+  const [verified, setVerified] = useState(false);
+
+  const handleLookup = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(
+        `http://localhost:1818/api/guestlist/${formData.name}`,
+      );
+      if (!res.ok) throw new Error("Not found");
+      setMaxGuests(data.maxGuests);
+      setVerified(true);
+    } catch (err) {
+      setStatus("not-found");
+    }
+  };
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -49,6 +64,27 @@ function RSVPForm() {
   const handleEdit = () => {
     setStatus(null);
   };
+
+  if (!verified) {
+    return (
+      <form onSubmit={handleLookup}>
+        <label>
+          Enter your Name
+          <input
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <button type="submit">Find My Invite</button>
+        {status === "not-found" && (
+          <p>Sorry, we couldn't find that name on the guest list.</p>
+        )}
+      </form>
+    );
+  }
+  //if verified, it continues...
 
   if (status === "success")
     return (
@@ -97,9 +133,13 @@ function RSVPForm() {
         Amount Attending
         <input
           name="amountAttending"
+          type="number"
+          min="1"
+          max={maxGuests}
           value={formData.amountAttending}
           onChange={handleChange}
         />
+        <span>Max: {maxGuests}</span>
       </label>
 
       <label>

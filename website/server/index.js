@@ -18,7 +18,9 @@ app.use(express.json());
 
 //routes here
 const rsvpRoutes = require("./routes/rsvp");
-app.use("/api/rsvp", rsvpRoutes); //etc
+const guestListRoutes = require("./routes/guestlist");
+app.use("/api/rsvp", rsvpRoutes);
+app.use("/api/guestlist", guestListRoutes);
 
 const mongoose = require("mongoose");
 
