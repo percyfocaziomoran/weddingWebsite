@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
 router.get("/:name", async (req, res) => {
   try {
     const guest = await GuestList.findOne({
-      name: { regex: new RegExp(`^${req.params.name}$`, "i") },
+      name: { $regex: new RegExp(`^${req.params.name}$`, "i") },
     });
     if (!guest)
       return res.status(404).json({

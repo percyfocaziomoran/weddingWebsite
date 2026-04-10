@@ -4,21 +4,6 @@ import { useState } from "react";
 import styles from "./RSVPForm.module.css";
 
 function RSVPForm() {
-  const [verified, setVerified] = useState(false);
-
-  const handleLookup = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch(
-        `http://localhost:1818/api/guestlist/${formData.name}`,
-      );
-      if (!res.ok) throw new Error("Not found");
-      setMaxGuests(data.maxGuests);
-      setVerified(true);
-    } catch (err) {
-      setStatus("not-found");
-    }
-  };
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,8 +12,27 @@ function RSVPForm() {
     food: "",
     dietary: "",
   });
+
   const [status, setStatus] = useState(null);
   const [guestId, setGuestId] = useState(null);
+  const [verified, setVerified] = useState(false);
+  const [maxGuests, setMaxGuests] = useState(1);
+
+  const handleLookup = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(
+        `http://localhost:1818/api/guestlist/${encodeURIComponent(formData.name)}`,
+      );
+
+      if (!res.ok) throw new Error("Not found");
+      const data = await res.json();
+      setMaxGuests(data.maxGuests);
+      setVerified(true);
+    } catch (err) {
+      setStatus("not-found");
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
