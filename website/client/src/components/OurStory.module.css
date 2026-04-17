@@ -6,7 +6,7 @@
 
 .sticker1 {
   position: absolute;
-  width: 230px;
+  width: 270px;
   bottom: 20px;
   right: -30px;
   transform: rotate(12deg);
@@ -14,7 +14,7 @@
 
 .sticker2 {
   position: absolute;
-  width: 170px;
+  width: 220px;
   bottom: 40px;
   left: -20px;
   transform: rotate(-25deg);
@@ -22,7 +22,7 @@
 
 .sticker3 {
   position: absolute;
-  width: 210px;
+  width: 280px;
   top: 10px;
   left: 20px;
   transform: rotate(-25deg);
@@ -30,10 +30,38 @@
 
 .sticker4 {
   position: absolute;
-  width: 210px;
+  width: 270px;
   top: 10px;
   right: 20px;
   transform: rotate(25deg);
+}
+.sticker5 {
+  position: absolute;
+  width: 210px;
+  top: 400px;
+  left: 40px;
+  transform: rotate(-13deg);
+}
+.sticker6 {
+  position: absolute;
+  width: 250px;
+  top: 400px;
+  right: -60px;
+  transform: rotate(29deg);
+}
+.sticker7 {
+  position: absolute;
+  width: 210px;
+  bottom: -300px;
+  right: -40px;
+  transform: rotate(11deg);
+}
+.sticker8 {
+  position: absolute;
+  width: 210px;
+  top: 803px;
+  right: 40px;
+  transform: rotate(3deg);
 }
 
 .polaroid {

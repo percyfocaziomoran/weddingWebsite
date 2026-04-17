@@ -1,28 +1,24 @@
-import RSVPForm from "./components/RSVPForm";
-import OurStory from "./components/OurStory";
-import Home from "./components/Home";
-import Schedule from "./components/Schedule";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./components/Nav";
+import HomePage from "./pages/HomePage";
+import OurStoryPage from "./pages/OurStoryPage";
+import SchedulePage from "./pages/SchedulePage";
+import RSVPPage from "./pages/RSVPPage";
 import "./App.css";
+import PhotoGalleryPage from "./pages/PhotoGallery";
 
 function App() {
   return (
-    <div>
-      <nav>
-        <a href="#story">Our Story</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#rsvp">RSVP</a>
-      </nav>
-      <Home />
-      <section id="story">
-        <OurStory />
-      </section>
-      <section id="rsvp">
-        <RSVPForm />
-      </section>
-      <section id="schedule">
-        <Schedule />
-      </section>
-    </div>
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/our-story" element={<OurStoryPage />} />
+        <Route path="/schedule" element={<SchedulePage />} />
+        <Route path="/rsvp" element={<RSVPPage />} />
+        <Route path="/photogallery" element={<PhotoGalleryPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,17 +1,13 @@
-//Percy Focazio-Moran
+/* //Percy */
 
-import styles from "./OurStory.module.css";
+import styles from "./PhotoGallery.module.css";
 
-function OurStory() {
+function PhotoGallery() {
   return (
-    <section className={styles.OurStory}>
-      <img src="/polaroid1.PNG" className={styles.polaroid} alt="" />
-      <h1 className={styles.headStory}>Our Story</h1>
-      <img src="/sticker3.PNG" className={styles.sticker3} alt="" />
-      <p className={styles.meeting}>
-        Elliott and Percy matched on Hinge on February 22nd, 2024...........
-      </p>
-      <img src="/sticker1.PNG" className={styles.sticker1} alt="" />
+    <section className={styles.photos}>
+      <h1>Photo Gallery</h1>
+      <p>Here is the Photo Gallery</p>
+      <img src="/eli1.PNG" className={styles.eli1} alt="" />
       <p className={styles.lorem}>
         Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit
         amet, consectetur, adipisci velit..." "There is no one who loves pain
@@ -35,14 +31,8 @@ function OurStory() {
         versions have evolved over the years, sometimes by accident, sometimes
         on purpose (injected humour and the like).{" "}
       </p>
-      <img src="/sticker4.PNG" className={styles.sticker4} alt="" />
-      <img src="/sticker2.PNG" className={styles.sticker2} alt="" />
-      <img src="/sticker5.PNG" className={styles.sticker5} alt="" />
-      <img src="/sticker6.PNG" className={styles.sticker6} alt="" />
-      <img src="/sticker7.png" className={styles.sticker7} alt="" />
-      <img src="/sticker8.PNG" className={styles.sticker8} alt="" />
     </section>
   );
 }
 
-export default OurStory;
+export default Schedule;

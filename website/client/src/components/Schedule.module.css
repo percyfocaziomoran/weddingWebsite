@@ -1,3 +1,12 @@
 .schedule {
   background-color: #b7410e;
+  padding: 40px 180px;
+}
+
+.eli1 {
+  position: absolute;
+  width: 350px;
+  bottom: -1550px;
+  left: 40px;
+  transform: rotate(2deg);
 }

@@ -7,7 +7,7 @@ function Schedule() {
     <section className={styles.schedule}>
       <h1>Schedule</h1>
       <p>Here is the schedule</p>
-
+      <img src="/eli1.PNG" className={styles.eli1} alt="" />
       <p className={styles.lorem}>
         Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit
         amet, consectetur, adipisci velit..." "There is no one who loves pain
