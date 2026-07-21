@@ -3,6 +3,9 @@
 import { useState } from "react";
 import styles from "./RSVPForm.module.css";
 
+//Empty in dev (Vite proxy handles /api); set VITE_API_URL in prod if the API lives elsewhere
+const API_URL = import.meta.env.VITE_API_URL || "";
+
 function RSVPForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -22,15 +25,25 @@ function RSVPForm() {
     e.preventDefault();
     try {
       const res = await fetch(
-        `http://localhost:1818/api/guestlist/${encodeURIComponent(formData.name)}`,
+        `${API_URL}/api/guestlist/${encodeURIComponent(formData.email)}`,
       );
 
-      if (!res.ok) throw new Error("Not found");
+      //404 = the email really isn't on the list. Anything else = a server problem.
+      if (res.status === 404) {
+        setStatus("not-found");
+        return;
+      }
+      if (!res.ok) {
+        setStatus("server-error");
+        return;
+      }
       const data = await res.json();
       setMaxGuests(data.maxGuests);
+      setStatus(null);
       setVerified(true);
-    } catch (err) {
-      setStatus("not-found");
+    } catch {
+      //fetch threw = couldn't reach the server at all
+      setStatus("server-error");
     }
   };
 
@@ -47,20 +60,29 @@ function RSVPForm() {
     try {
       const isEditing = !!guestId;
       const url = isEditing
-        ? `http://localhost:1818/api/rsvp/${guestId}`
-        : "http://localhost:1818/api/rsvp";
+        ? `${API_URL}/api/rsvp/${guestId}`
+        : `${API_URL}/api/rsvp`;
       const method = isEditing ? "PUT" : "POST";
+
+      //Send amountAttending as a number (schema expects Number); omit if blank
+      const payload = {
+        ...formData,
+        amountAttending:
+          formData.amountAttending === ""
+            ? undefined
+            : Number(formData.amountAttending),
+      };
 
       const res = await fetch(url, {
         method,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error("Failed to submit :( ");
       const data = await res.json();
       setGuestId(data.guest._id);
       setStatus("success");
-    } catch (err) {
+    } catch {
       setStatus("error");
     }
   };
@@ -71,19 +93,28 @@ function RSVPForm() {
 
   if (!verified) {
     return (
-      <form onSubmit={handleLookup}>
+      <form onSubmit={handleLookup} className={styles.form}>
         <label>
-          Enter your Name
+          Enter your Email
           <input
-            name="name"
-            value={formData.name}
+            name="email"
+            type="email"
+            value={formData.email}
             onChange={handleChange}
             required
           />
         </label>
-        <button type="submit">Find My Invite</button>
+        <button type="submit" className={styles.button}>
+          Find My Invite
+        </button>
         {status === "not-found" && (
-          <p>Sorry, we couldn't find that name on the guest list.</p>
+          <p>Sorry, we couldn't find that email on the guest list.</p>
+        )}
+        {status === "server-error" && (
+          <p>
+            Something went wrong on our end and we couldn&apos;t check the list.
+            Please try again in a moment.
+          </p>
         )}
       </form>
     );

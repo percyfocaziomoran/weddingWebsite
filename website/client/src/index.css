@@ -55,6 +55,33 @@ body {
   background-color: #d79596;
 }
 
+/* ---- Wedding palette (storybook theme) ---- */
+:root {
+  --green: #073a00;
+  --green-light: #0b5500;
+  --ivory: #fdfbf5;
+  --cream: #f4efe1;
+  --blush: #d98b8b;
+  --silver: #c7ccd1;
+  --silver-light: #e4e7ea;
+  --script: "Great Vibes", cursive; /* flowing fairytale accents */
+  --hand: "Caveat", cursive; /* casual handwriting for captions/notes */
+  --display: "Cinzel Decorative", serif; /* ornate storybook title */
+  --serif: "Cormorant Garamond", Georgia, serif; /* romantic body serif */
+}
+
+/* Warm paper background with a soft speckle, replacing the template pink */
+body {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(rgba(7, 58, 0, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(7, 58, 0, 0.04) 1px, transparent 1px);
+  background-position:
+    0 0,
+    12px 12px;
+  background-size: 24px 24px;
+}
+
 #root {
   width: 1126px;
   max-width: 100%;

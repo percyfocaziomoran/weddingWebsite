@@ -1,0 +1,113 @@
+/* Shared card look, matching RSVPForm */
+.card {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #fdfbf5; /* soft ivory */
+  color: #073a00; /* dark green text */
+  border: 1px solid #e5ddc8;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(7, 58, 0, 0.08);
+}
+
+/* Narrower card for the password gate */
+.gate {
+  max-width: 360px;
+}
+
+.heading {
+  margin-top: 0;
+  color: #073a00;
+}
+
+.summary {
+  font-size: 1rem;
+  color: #4a5a42;
+  margin-bottom: 1.5rem;
+}
+
+/* Password field */
+.input {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #cdbfa3;
+  border-radius: 8px;
+  color: #073a00;
+  background-color: #fff;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #073a00;
+  box-shadow: 0 0 0 3px rgba(7, 58, 0, 0.15);
+}
+
+.button {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fdfbf5;
+  background-color: #073a00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.button:hover {
+  background-color: #0b5500;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  color: #b00020;
+  margin-top: 0.75rem;
+}
+
+/* The RSVP table — high-contrast, easy to read */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  color: #073a00;
+}
+
+.table th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  background-color: #073a00;
+  color: #fdfbf5;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #e5ddc8;
+}
+
+/* Zebra striping so rows are easy to scan */
+.table tbody tr:nth-child(even) {
+  background-color: #f4efe1;
+}
+
+/* Small red delete button in each row */
+.deleteButton {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  color: #fff;
+  background-color: #b00020;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #8a0019;
+}

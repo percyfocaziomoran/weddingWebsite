@@ -1,4 +1,67 @@
+/* The card that wraps the whole form */
 .form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 440px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #fdfbf5; /* soft ivory */
+  color: #073a00; /* dark green text */
+  border: 1px solid #e5ddc8;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(7, 58, 0, 0.08);
+}
+
+/* Each label stacks its text above its field */
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Every input and select inside the form shares one look */
+.form input,
+.form select {
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #cdbfa3;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #073a00;
+}
+
+/* Highlight the field the user is currently in */
+.form input:focus,
+.form select:focus {
+  outline: none;
+  border-color: #073a00;
+  box-shadow: 0 0 0 3px rgba(7, 58, 0, 0.15);
+}
+
+/* The submit / lookup button */
+.button {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fdfbf5;
   background-color: #073a00;
-  padding: 10%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.button:hover {
+  background-color: #0b5500;
+}
+
+/* The "Max: N" helper text under the guest count */
+.form span {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #6b7a63;
 }

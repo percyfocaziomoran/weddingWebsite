@@ -1,5 +1,93 @@
 /* Percy Focazio-Moran */
 .photos {
-  background-color: #0eb749;
-  padding: 40px 180px;
+  background-color: #1c5b3a; /* rich storybook green */
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.07) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 22px 22px;
+  padding: 48px clamp(24px, 12vw, 180px);
+  min-height: 80vh;
+  text-align: center;
+}
+
+.photos h1 {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--ivory);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  margin-bottom: 0.5rem;
+}
+
+/* Intro line sits on the coloured background, so keep it light */
+.intro {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--cream);
+  max-width: 640px;
+  margin: 0 auto 1rem;
+}
+
+/* ---- Photo grid ---- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 22px;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+/* Polaroid-style frame, gently tilted */
+.tile {
+  margin: 0;
+  background-color: #fff;
+  padding: 10px 10px 14px;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  transform: rotate(-1.5deg);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tile:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+.tile:hover {
+  transform: rotate(0) scale(1.04);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.38);
+  z-index: 2;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.caption {
+  font-family: var(--hand);
+  text-align: center;
+  color: var(--green);
+  font-size: 1.4rem;
+  line-height: 1.1;
+  margin: 0.5rem 0 0;
+}
+
+/* Empty "Add photo" slot */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border: 2px dashed rgba(255, 255, 255, 0.55);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--cream);
+  font-family: var(--serif);
+  font-size: 1.05rem;
 }

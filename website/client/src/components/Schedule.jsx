@@ -2,35 +2,40 @@
 
 import styles from "./Schedule.module.css";
 
+//Edit this list as you finalise the day: change the time, title, and detail
+//for each event, add new ones, or remove any you don't need.
+const events = [
+  { time: "TBC", title: "Ceremony", detail: "Add the venue and details here." },
+  { time: "TBC", title: "Drinks Reception", detail: "Add details here." },
+  { time: "TBC", title: "Wedding Breakfast", detail: "Add details here." },
+  { time: "TBC", title: "Speeches", detail: "Add details here." },
+  { time: "TBC", title: "First Dance", detail: "Add details here." },
+  { time: "TBC", title: "Evening Celebrations", detail: "Add details here." },
+  { time: "TBC", title: "Carriages", detail: "Add details here." },
+];
+
 function Schedule() {
   return (
     <section className={styles.schedule}>
       <h1>Schedule</h1>
-      <p>Here is the schedule</p>
-      <img src="/eli1.PNG" className={styles.eli1} alt="" />
-      <p className={styles.lorem}>
-        Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit
-        amet, consectetur, adipisci velit..." "There is no one who loves pain
-        itself, who seeks after it and wants to have it, simply because it is
-        pain..." What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-        printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a
-        galley of type and scrambled it to make a type specimen book. It has
-        survived not only five centuries, but also the leap into electronic
-        typesetting, remaining essentially unchanged. It was popularised in the
-        1960s with the release of Letraset sheets containing Lorem Ipsum
-        passages, and more recently with desktop publishing software like Aldus
-        PageMaker including versions of Lorem Ipsum. Why do we use it? It is a
-        long established fact that a reader will be distracted by the readable
-        content of a page when looking at its layout. The point of using Lorem
-        Ipsum is that it has a more-or-less normal distribution of letters, as
-        opposed to using 'Content here, content here', making it look like
-        readable English. Many desktop publishing packages and web page editors
-        now use Lorem Ipsum as their default model text, and a search for 'lorem
-        ipsum' will uncover many web sites still in their infancy. Various
-        versions have evolved over the years, sometimes by accident, sometimes
-        on purpose (injected humour and the like).{" "}
+      <p className={styles.intro}>
+        Here&apos;s how the day will unfold — details coming soon!
       </p>
+
+      <div className={styles.timeline}>
+        {events.map((event, i) => (
+          <div className={styles.event} key={i}>
+            <div className={styles.time}>{event.time}</div>
+            <div className={styles.card}>
+              <h2 className={styles.eventTitle}>{event.title}</h2>
+              <p className={styles.eventDetail}>{event.detail}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <img src="/eli1.PNG" className={styles.eli1} alt="" />
+      <img src="/eli1.PNG" className={styles.eli1Right} alt="" />
     </section>
   );
 }

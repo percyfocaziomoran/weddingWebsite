@@ -5,8 +5,8 @@ import styles from "./OurStory.module.css";
 function OurStory() {
   return (
     <section className={styles.OurStory}>
-      <img src="/polaroid1.PNG" className={styles.polaroid} alt="" />
       <h1 className={styles.headStory}>Our Story</h1>
+      <img src="/polaroid1.PNG" className={styles.polaroid} alt="" />
       <img src="/sticker3.PNG" className={styles.sticker3} alt="" />
       <p className={styles.meeting}>
         Elliott and Percy matched on Hinge on February 22nd, 2024...........

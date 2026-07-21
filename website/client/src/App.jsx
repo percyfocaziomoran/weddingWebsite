@@ -6,6 +6,7 @@ import SchedulePage from "./pages/SchedulePage";
 import RSVPPage from "./pages/RSVPPage";
 import "./App.css";
 import PhotoGalleryPage from "./pages/PhotoGallery";
+import AdminPage from "./pages/AdminPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/schedule" element={<SchedulePage />} />
         <Route path="/rsvp" element={<RSVPPage />} />
         <Route path="/photogallery" element={<PhotoGalleryPage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,12 +1,123 @@
 .schedule {
-  background-color: #b7410e;
-  padding: 40px 180px;
+  position: relative; /* so the sticker anchors to this section */
+  background-color: #21507c; /* rich storybook blue */
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.07) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 22px 22px;
+  padding: 48px clamp(24px, 12vw, 180px);
+  min-height: 80vh;
+  text-align: center;
+  overflow: hidden; /* keep the sticker tucked in the corner */
 }
 
+/* eli1 photo as a sticker in the bottom-left corner (original size) */
 .eli1 {
   position: absolute;
   width: 350px;
-  bottom: -1550px;
-  left: 40px;
+  bottom: 20px;
+  left: 20px;
   transform: rotate(2deg);
+}
+
+/* Same image mirrored into the bottom-right corner */
+.eli1Right {
+  position: absolute;
+  width: 350px;
+  bottom: 20px;
+  right: 20px;
+  transform: scaleX(-1) rotate(2deg); /* horizontal flip = exact mirror of the left */
+}
+
+/* Hide the stickers on narrower screens so they don't cover the schedule text */
+@media (max-width: 820px) {
+  .eli1,
+  .eli1Right {
+    display: none;
+  }
+}
+
+.schedule h1 {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--ivory);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  margin-bottom: 0.5rem;
+}
+
+/* Intro line sits on the coloured background, so keep it light */
+.intro {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--cream);
+  max-width: 640px;
+  margin: 0 auto 1rem;
+}
+
+/* ---- Timeline ---- */
+.timeline {
+  max-width: 640px;
+  margin: 2rem auto 0;
+  text-align: left;
+}
+
+.event {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+/* Time label sits on the coloured background */
+.time {
+  flex: 0 0 84px;
+  padding-top: 0.9rem;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--cream);
+  text-align: right;
+}
+
+/* Event card in parchment, with a gold accent edge */
+.card {
+  flex: 1;
+  background-color: var(--ivory);
+  border: 1px solid #e5ddc8;
+  border-left: 5px solid #f2d98d;
+  border-radius: 0 14px 14px 0;
+  padding: 0.9rem 1.25rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.eventTitle {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  color: var(--green);
+  margin: 0 0 0.25rem;
+}
+
+.eventDetail {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--green-light);
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .event {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .time {
+    text-align: left;
+    padding-top: 0;
+  }
+  .card {
+    border-left: 5px solid #f2d98d;
+    border-radius: 0 14px 14px 0;
+  }
 }
