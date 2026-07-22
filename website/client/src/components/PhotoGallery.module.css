@@ -1,11 +1,8 @@
 /* Percy Focazio-Moran */
 .photos {
   background-color: #1c5b3a; /* rich storybook green */
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.07) 1.5px,
-    transparent 1.5px
-  );
-  background-size: 22px 22px;
+  background-image: url("/heart-pattern.svg"); /* subtle repeating hearts */
+  background-size: 15px 15px;
   padding: 48px clamp(24px, 12vw, 180px);
   min-height: 80vh;
   text-align: center;

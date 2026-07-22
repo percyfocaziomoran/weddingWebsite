@@ -2,39 +2,94 @@
 
 import styles from "./OurStory.module.css";
 
+//Edit your milestones here: change the date, title, and detail, add new
+//moments, or remove any you don't need. They appear top-to-bottom.
+//To add a photo to a milestone, drop the file in client/public/ and add an
+//"img" property, e.g. img: "/first-date.jpg". Leave it off for no photo.
+const events = [
+  {
+    date: "22 Feb 2024",
+    title: "Match!",
+    detail:
+      "Elliott made the first move: a flirty comment about the book on Percy's profile.",
+    img: "",
+  },
+  {
+    date: "18 March 2024",
+    title: "Our first date",
+    detail: "We met at the Marina Market, feeling nervecited.",
+    img: "",
+  },
+  {
+    date: "18 April 2024",
+    title: "Made it official",
+    detail: "Percy asked Elliott to be their partner, and Eli said yes!",
+    img: "",
+  },
+  {
+    date: "28 August 2024",
+    title: "Our first holiday",
+    detail: "Travelled to Edinburgh together",
+    img: "/polaroid1.PNG",
+  },
+  {
+    date: "18 April 2025",
+    title: "Our first anniversary",
+    detail: "Celebrated in Amsterdam, surrounded by tulips.",
+    img: "",
+  },
+  {
+    date: "14 February 2026",
+    title: "Engagement rings",
+    detail: "We made our rings together in a Dublin jewellery shop.",
+    img: "",
+  },
+  {
+    date: "29 July 2026",
+    title: "Eli's proposal",
+    detail: "Add details here.",
+    img: "",
+  },
+  {
+    date: "29 July 2026",
+    title: "Percy's proposal",
+    detail: "Add details here.",
+    img: "",
+  },
+  {
+    date: "18 Sep 2027",
+    title: "We get married!",
+    detail: "Venue",
+    img: "",
+  },
+];
+
 function OurStory() {
   return (
     <section className={styles.OurStory}>
       <h1 className={styles.headStory}>Our Story</h1>
-      <img src="/polaroid1.PNG" className={styles.polaroid} alt="" />
+
+      <div className={styles.timeline}>
+        {events.map((event, i) => (
+          <div className={styles.item} key={i}>
+            <span className={styles.date}>{event.date}</span>
+            <div className={styles.card}>
+              {event.img && (
+                <img
+                  src={event.img}
+                  alt={event.title}
+                  className={styles.eventPhoto}
+                />
+              )}
+              <h2 className={styles.eventTitle}>{event.title}</h2>
+              <p className={styles.eventDetail}>{event.detail}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <img src="/sticker3.PNG" className={styles.sticker3} alt="" />
-      <p className={styles.meeting}>
-        Elliott and Percy matched on Hinge on February 22nd, 2024...........
-      </p>
       <img src="/sticker1.PNG" className={styles.sticker1} alt="" />
-      <p className={styles.lorem}>
-        Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit
-        amet, consectetur, adipisci velit..." "There is no one who loves pain
-        itself, who seeks after it and wants to have it, simply because it is
-        pain..." What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-        printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a
-        galley of type and scrambled it to make a type specimen book. It has
-        survived not only five centuries, but also the leap into electronic
-        typesetting, remaining essentially unchanged. It was popularised in the
-        1960s with the release of Letraset sheets containing Lorem Ipsum
-        passages, and more recently with desktop publishing software like Aldus
-        PageMaker including versions of Lorem Ipsum. Why do we use it? It is a
-        long established fact that a reader will be distracted by the readable
-        content of a page when looking at its layout. The point of using Lorem
-        Ipsum is that it has a more-or-less normal distribution of letters, as
-        opposed to using 'Content here, content here', making it look like
-        readable English. Many desktop publishing packages and web page editors
-        now use Lorem Ipsum as their default model text, and a search for 'lorem
-        ipsum' will uncover many web sites still in their infancy. Various
-        versions have evolved over the years, sometimes by accident, sometimes
-        on purpose (injected humour and the like).{" "}
-      </p>
       <img src="/sticker4.PNG" className={styles.sticker4} alt="" />
       <img src="/sticker2.PNG" className={styles.sticker2} alt="" />
       <img src="/sticker5.PNG" className={styles.sticker5} alt="" />
