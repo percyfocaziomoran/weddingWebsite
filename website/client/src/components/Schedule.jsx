@@ -1,6 +1,7 @@
 //Percy
 
 import styles from "./Schedule.module.css";
+import AddToCalendar from "./AddToCalendar";
 
 //Edit this list as you finalise the day: change the time, title, and detail
 //for each event, add new ones, or remove any you don't need.
@@ -21,6 +22,8 @@ function Schedule() {
       <p className={styles.intro}>
         Here&apos;s how the day will unfold — details coming soon!
       </p>
+
+      <AddToCalendar />
 
       <div className={styles.timeline}>
         {events.map((event, i) => (

@@ -2,17 +2,13 @@
 
 import styles from "./OurStory.module.css";
 
-//Edit your milestones here: change the date, title, and detail, add new
-//moments, or remove any you don't need. They appear top-to-bottom.
-//To add a photo to a milestone, drop the file in client/public/ and add an
-//"img" property, e.g. img: "/first-date.jpg". Leave it off for no photo.
 const events = [
   {
     date: "22 Feb 2024",
     title: "Match!",
     detail:
       "Elliott made the first move: a flirty comment about the book on Percy's profile.",
-    img: "",
+    img: "Hinge.png",
   },
   {
     date: "18 March 2024",
@@ -47,7 +43,8 @@ const events = [
   {
     date: "29 July 2026",
     title: "Eli's proposal",
-    detail: "Add details here.",
+    detail:
+      "Eli took Percy night kayaking in a bioluminescent lake before getting down on one knee.",
     img: "",
   },
   {

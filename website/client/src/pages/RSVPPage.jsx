@@ -1,6 +1,7 @@
 //
 
 import RSVPForm from "../components/RSVPForm";
+import Countdown from "../components/Countdown";
 
 //Same patterned endpaper background as the inside of the book cover
 const pageStyle = {
@@ -15,6 +16,7 @@ const pageStyle = {
 function RSVPPage() {
   return (
     <div style={pageStyle}>
+      <Countdown />
       <RSVPForm />
     </div>
   );

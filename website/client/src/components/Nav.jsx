@@ -10,6 +10,7 @@ function Nav() {
       <Link to="/schedule">Schedule</Link>
       <Link to="/rsvp">RSVP</Link>
       <Link to="/photogallery">Photo Gallery</Link>
+      <Link to="/dogs">Our Dogs</Link>
     </nav>
   );
 }

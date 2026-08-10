@@ -140,6 +140,14 @@
   color: var(--green-light);
 }
 
+.countdown {
+  font-family: var(--script);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--blush);
+  margin-top: 0.35rem;
+}
+
 .cta {
   margin-top: 0.6rem;
   display: inline-block;

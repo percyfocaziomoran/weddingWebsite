@@ -1,0 +1,8 @@
+.countdown {
+  font-family: var(--script);
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  line-height: 1;
+  text-align: center;
+  color: var(--green-light);
+  margin: 0 auto 1.5rem;
+}

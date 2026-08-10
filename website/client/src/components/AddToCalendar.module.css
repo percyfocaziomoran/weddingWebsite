@@ -1,0 +1,28 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 1.5rem auto 0;
+}
+
+.button {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--green);
+  background-color: var(--ivory);
+  border: 2px solid var(--silver);
+  border-radius: 999px;
+  padding: 0.55rem 1.5rem;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background-color: #fff;
+}

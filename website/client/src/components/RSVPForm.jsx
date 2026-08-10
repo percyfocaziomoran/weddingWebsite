@@ -64,13 +64,15 @@ function RSVPForm() {
         : `${API_URL}/api/rsvp`;
       const method = isEditing ? "PUT" : "POST";
 
-      //Send amountAttending as a number (schema expects Number); omit if blank
+      //Send amountAttending as a number (schema expects Number); omit if blank.
+      //Omit food entirely if no meal was chosen (empty string fails the enum).
       const payload = {
         ...formData,
         amountAttending:
           formData.amountAttending === ""
             ? undefined
             : Number(formData.amountAttending),
+        food: formData.food === "" ? undefined : formData.food,
       };
 
       const res = await fetch(url, {
