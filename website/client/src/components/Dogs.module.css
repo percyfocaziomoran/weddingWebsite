@@ -24,18 +24,15 @@
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-  max-width: 760px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 /* Parchment profile card */
 .card {
-  flex: 1 1 280px;
-  max-width: 340px;
   background-color: var(--ivory);
   border: 1px solid #e5ddc8;
   border-radius: 16px;
@@ -72,4 +69,10 @@
   line-height: 1.5;
   color: var(--green);
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

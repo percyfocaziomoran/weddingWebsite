@@ -6,13 +6,12 @@ import AddToCalendar from "./AddToCalendar";
 //Edit this list as you finalise the day: change the time, title, and detail
 //for each event, add new ones, or remove any you don't need.
 const events = [
-  { time: "TBC", title: "Ceremony", detail: "Add the venue and details here." },
-  { time: "TBC", title: "Drinks Reception", detail: "Add details here." },
-  { time: "TBC", title: "Wedding Breakfast", detail: "Add details here." },
-  { time: "TBC", title: "Speeches", detail: "Add details here." },
-  { time: "TBC", title: "First Dance", detail: "Add details here." },
-  { time: "TBC", title: "Evening Celebrations", detail: "Add details here." },
-  { time: "TBC", title: "Carriages", detail: "Add details here." },
+  { time: "TBC", title: "Rehearsal Dinner", detail: "TBC" },
+  { time: "TBC", title: "Ceremony", detail: "The Dean, Blue Room" },
+  { time: "TBC", title: "Drinks Reception", detail: "The Dean, downstairs" },
+  { time: "TBC", title: "Dinner", detail: "The Dean, Blue Room" },
+  { time: "TBC", title: "Reception", detail: "The Dean, Blue Room" },
+  { time: "TBC", title: "Day 2", detail: "The Kingsley" },
 ];
 
 function Schedule() {

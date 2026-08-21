@@ -23,6 +23,10 @@ const photos = [
   { src: "/us2.jpg", caption: "Kerry 2026" },
   { src: "/us3.jpg", caption: "Wilde 2026" },
   { src: "/us4.jpg", caption: "Beach Picnic 2026" },
+  { src: "marrymephoto.jpg", caption: "Percy's proposal picnic" },
+  { src: "marrymedistant.jpg", caption: "" },
+  { src: "kissingdistant.jpg", caption: "" },
+  { src: "loughhyne1.jpg", caption: "Elliott's proposal location: Lough Hyne" },
 ];
 
 function PhotoGallery() {

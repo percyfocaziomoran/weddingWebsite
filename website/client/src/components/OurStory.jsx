@@ -45,19 +45,20 @@ const events = [
     title: "Eli's proposal",
     detail:
       "Eli took Percy night kayaking in a bioluminescent lake before getting down on one knee.",
-    img: "",
+    img: "loughhyne2.jpg",
   },
   {
     date: "29 July 2026",
     title: "Percy's proposal",
-    detail: "Add details here.",
-    img: "",
+    detail:
+      "Percy took Eli on a scavenger hunt across Cork before proposing in middle of an outdoor feast in a fern garden.",
+    img: "marrymedistant.jpg",
   },
   {
     date: "18 Sep 2027",
     title: "We get married!",
-    detail: "Venue",
-    img: "",
+    detail: "Cork, Ireland",
+    img: "kissingdistant.jpg",
   },
 ];
 
