@@ -18,7 +18,7 @@ const dogs = [
   },
   {
     name: "Fudge",
-    photo: "/pug.jpg",
+    photo: "/fudgetp.jpg",
     tagline: "The Energizer Bunny",
     bio: "Fudge is an energetic and excitable 'fug' (fake pug, or Fudge pug) who strongly believes she is dating Hazel (Hazel is not sure of this). Elliott told Percy that Fudge would calm down after the first time they met... that was years ago.",
   },

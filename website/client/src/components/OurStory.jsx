@@ -14,7 +14,7 @@ const events = [
     date: "18 March 2024",
     title: "Our first date",
     detail: "We met at the Marina Market, feeling nervecited.",
-    img: "",
+    img: "/marinamarket.jpg",
   },
   {
     date: "18 April 2024",
@@ -32,7 +32,7 @@ const events = [
     date: "18 April 2025",
     title: "Our first anniversary",
     detail: "Celebrated in Amsterdam, surrounded by tulips.",
-    img: "",
+    img: "amsterdam.jpeg",
   },
   {
     date: "14 February 2026",
@@ -45,20 +45,32 @@ const events = [
     title: "Eli's proposal",
     detail:
       "Eli took Percy night kayaking in a bioluminescent lake before getting down on one knee.",
-    img: "loughhyne2.jpg",
+    img: "/loughhyne2.jpg",
   },
   {
-    date: "29 July 2026",
+    date: "18 August 2026",
     title: "Percy's proposal",
     detail:
       "Percy took Eli on a scavenger hunt across Cork before proposing in middle of an outdoor feast in a fern garden.",
-    img: "marrymedistant.jpg",
+    img: "/marrymedistant.jpg",
+  },
+  {
+    date: "29 August 2026",
+    title: "Engagement Dinner",
+    detail: "Close family meetup to celebrate",
+    img: "",
+  },
+  {
+    date: "17 Sep 2027",
+    title: "Rehearsal Dinner",
+    detail: "",
+    img: "",
   },
   {
     date: "18 Sep 2027",
     title: "We get married!",
     detail: "Cork, Ireland",
-    img: "kissingdistant.jpg",
+    img: "/kissingdistant.jpg",
   },
 ];
 
