@@ -92,7 +92,6 @@ function AdminDashboard() {
             <th>Email</th>
             <th>Attending</th>
             <th>Party</th>
-            <th>Meal</th>
             <th>Dietary</th>
             <th>Submitted</th>
             <th></th>
@@ -105,7 +104,6 @@ function AdminDashboard() {
               <td>{g.email}</td>
               <td>{g.attending ? "Yes" : "No"}</td>
               <td>{g.attending ? g.amountAttending || 1 : "-"}</td>
-              <td>{g.food || "-"}</td>
               <td>{g.dietary || "-"}</td>
               <td>
                 {g.submittedAt

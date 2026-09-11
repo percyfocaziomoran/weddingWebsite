@@ -13,7 +13,6 @@ function RSVPForm() {
     email: "",
     attending: true,
     amountAttending: "",
-    food: "",
     dietary: "",
   });
 
@@ -67,14 +66,12 @@ function RSVPForm() {
       const method = isEditing ? "PUT" : "POST";
 
       //Send amountAttending as a number (schema expects Number); omit if blank.
-      //Omit food entirely if no meal was chosen (empty string fails the enum).
       const payload = {
         ...formData,
         amountAttending:
           formData.amountAttending === ""
             ? undefined
             : Number(formData.amountAttending),
-        food: formData.food === "" ? undefined : formData.food,
       };
 
       const res = await fetch(url, {
@@ -86,6 +83,8 @@ function RSVPForm() {
       const data = await res.json();
       setGuestId(data.guest._id);
       setIsAttending(data.guest.attending);
+      if (data.guest.attending) localStorage.setItem("rsvpAttending", "true");
+      else localStorage.removeItem("rsvpAttending");
       setStatus("success");
     } catch {
       setStatus("error");
@@ -181,16 +180,6 @@ function RSVPForm() {
           onChange={handleChange}
         />
         <span>Max: {maxGuests}</span>
-      </label>
-
-      <label>
-        Food Option
-        <select name="food" value={formData.food} onChange={handleChange}>
-          <option value="">Choose...</option>
-          <option value="choice1">choice1</option>
-          <option value="choice2">choice2</option>
-          <option value="choice3">choice3</option>
-        </select>
       </label>
 
       <label>
