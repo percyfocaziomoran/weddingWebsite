@@ -19,6 +19,7 @@ function RSVPForm() {
 
   const [status, setStatus] = useState(null);
   const [guestId, setGuestId] = useState(null);
+  const [isAttending, setIsAttending] = useState(false);
   const [verified, setVerified] = useState(false);
   const [maxGuests, setMaxGuests] = useState(1);
 
@@ -84,6 +85,7 @@ function RSVPForm() {
       if (!res.ok) throw new Error("Failed to submit :( ");
       const data = await res.json();
       setGuestId(data.guest._id);
+      setIsAttending(data.guest.attending);
       setStatus("success");
     } catch {
       setStatus("error");
@@ -129,7 +131,7 @@ function RSVPForm() {
       <div>
         <p>Thank you for your RSVP! We look forward to seeing you :P </p>
         <button onClick={handleEdit}>Edit RSVP</button>
-        {formData.attending && <Schedule />}
+        {isAttending && <Schedule />}
       </div>
     );
 

@@ -12,7 +12,10 @@ const app = express();
 
 // Adds headers: Access-Control-Allow-Origin: *
 //this iswhat allows react app to talk to server
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173" }));
+app.use(cors({
+  origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+  allowedHeaders: ["Content-Type", "x-admin-secret"],
+}));
 
 //this is parsing json requests
 app.use(express.json());
