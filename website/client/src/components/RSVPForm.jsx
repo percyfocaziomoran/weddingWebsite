@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./RSVPForm.module.css";
+import Schedule from "./Schedule";
 
 //Empty in dev (Vite proxy handles /api); set VITE_API_URL in prod if the API lives elsewhere
 const API_URL = import.meta.env.VITE_API_URL || "";
@@ -128,6 +129,7 @@ function RSVPForm() {
       <div>
         <p>Thank you for your RSVP! We look forward to seeing you :P </p>
         <button onClick={handleEdit}>Edit RSVP</button>
+        {formData.attending && <Schedule />}
       </div>
     );
 

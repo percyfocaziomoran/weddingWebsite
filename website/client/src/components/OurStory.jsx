@@ -70,7 +70,7 @@ const events = [
     date: "18 Sep 2027",
     title: "We get married!",
     detail: "Cork, Ireland",
-    img: "/kissingdistant.jpg",
+    img: "/sticker10.jpg",
   },
 ];
 

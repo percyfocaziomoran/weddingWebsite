@@ -6,12 +6,10 @@ import AddToCalendar from "./AddToCalendar";
 //Edit this list as you finalise the day: change the time, title, and detail
 //for each event, add new ones, or remove any you don't need.
 const events = [
-  { time: "TBC", title: "Rehearsal Dinner", detail: "TBC" },
-  { time: "TBC", title: "Ceremony", detail: "The Dean, Blue Room" },
-  { time: "TBC", title: "Drinks Reception", detail: "The Dean, downstairs" },
-  { time: "TBC", title: "Dinner", detail: "The Dean, Blue Room" },
-  { time: "TBC", title: "Reception", detail: "The Dean, Blue Room" },
-  { time: "TBC", title: "Day 2", detail: "The Kingsley" },
+  { time: "1:00PM", title: "Ceremony", detail: "TBD" },
+  { time: "2:00PM", title: "Drinks Reception", detail: "TBD" },
+  { time: "5:00PM", title: "Dinner", detail: "TBD" },
+  { time: "7:30PM", title: "Reception", detail: "TBD" },
 ];
 
 function Schedule() {
@@ -37,7 +35,7 @@ function Schedule() {
       </div>
 
       <img src="/eli1.PNG" className={styles.eli1} alt="" />
-      <img src="/eli1.PNG" className={styles.eli1Right} alt="" />
+      <img src="/percy.png" className={styles.eli1Right} alt="" />
     </section>
   );
 }

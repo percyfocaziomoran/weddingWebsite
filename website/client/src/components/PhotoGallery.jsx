@@ -41,7 +41,6 @@ const photos = [
 
   { src: "marrymephoto.jpg", caption: "Percy's proposal picnic" },
   { src: "marrymedistant.jpg", caption: "" },
-  { src: "kissingdistant.jpg", caption: "" },
   { src: "loughhyne1.jpg", caption: "Elliott's proposal location: Lough Hyne" },
 ];
 
