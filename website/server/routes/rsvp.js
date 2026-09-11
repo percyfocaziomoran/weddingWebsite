@@ -17,7 +17,6 @@ function buildConfirmation(guest) {
         "Thank you for your RSVP to Elliott & Percy's wedding!",
         "",
         `Guests attending: ${guest.amountAttending || 1}`,
-        guest.food ? `Meal choice: ${guest.food}` : null,
         guest.dietary ? `Dietary needs: ${guest.dietary}` : null,
         "",
         "18 September 2027 — Cork, Ireland. We can't wait to see you!",
@@ -51,7 +50,9 @@ function sendConfirmations(guest) {
       to: process.env.COUPLE_EMAIL,
       subject: `New RSVP: ${guest.name}`,
       text: `${guest.name} (${guest.email}) responded: ${
-        guest.attending ? `attending, ${guest.amountAttending || 1} guest(s)` : "not attending"
+        guest.attending
+          ? `attending, ${guest.amountAttending || 1} guest(s)`
+          : "not attending"
       }.`,
     }).catch((e) => console.error("Couple notification failed:", e.message));
   }
@@ -83,7 +84,6 @@ router.post("/", async (req, res) => {
 
     const email = req.body.email.toLowerCase().trim();
     const payload = { ...req.body, email };
-    if (!payload.food) delete payload.food; //empty meal choice would fail the enum
 
     //Update the RSVP if this email already responded, otherwise create it.
     //This lets guests re-submit to change their answer (as the email invites).

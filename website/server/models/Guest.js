@@ -13,7 +13,6 @@ const guestSchema = new mongoose.Schema({
   },
   attending: { type: Boolean, required: true },
   amountAttending: { type: Number, min: 1, default: 1 },
-  food: { type: String, enum: ["choice1", "choice2", "choice3"] },
   dietary: { type: String, default: "" },
   submittedAt: { type: Date, default: Date.now },
 });
